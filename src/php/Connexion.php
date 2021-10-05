@@ -4,12 +4,12 @@
     @$_SESSION["NomPrenom"] = null;
     @$_SESSION["IdUtilisateur"] = null;
 
-    if(isset($_POST["Email"]) && isset($_POST["MotDePasse"]))
+    if(isset($_POST["Email"]) && isset($_POST["Password"]))
     {
         @$Email = $_POST["Email"];
-        @$MotDePasse = $_POST["MotDePasse"];
+        @$Password = $_POST["Password"];
         
-        @$req = "SELECT IdUtilisateur, Nom FROM Utilisateur WHERE Email='$Email' AND MotDePasse=md5('$MotDePasse')";
+        @$req = "SELECT IdUtilisateur, Nom FROM Utilisateur WHERE Email='$Email' AND MotDePasse=md5('$Password')";
         @$res = $conn -> query($req);
         while($row = $res -> fetch())
         {

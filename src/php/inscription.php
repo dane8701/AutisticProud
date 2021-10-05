@@ -7,7 +7,7 @@
     
     if(isset($Nom) && isset($Prenom) && isset($Email) && isset($Password))
     {
-        @$query = "INSERT INTO produit (Nom, Prenom, Email, Password) 
+        @$query = "INSERT INTO produit (Nom, Prenom, Email, MotDePasse) 
                     VALUES ('$Nom', '$Prenom', '$Email', '$Password')";
         @$test = $conn -> query($query);
     }
