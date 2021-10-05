@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Autistic & Proud</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<header>
+    <div>
+        <nav class="navbar bg-dark static-top">
+            <div class="container">
+                <a class="navbar-brand"><img src="../img/test.png"></a>
+                <div>
+                    <a class="nav-item" href="index.html">Accueil</a>
+                    <a class="nav-item">Contact</a>
+                    <a class="nav-item" href="./inscription.html"><button>S'inscrire</button></a>
+                    <a class="nav-item" href="./connexion.html"><button>Se connecter</button></a>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+<body>
+
+<div class="formDiv">
+    <form action="../php/connexion.php">
+        <div class="container">
+            <h1 class="titles">S'inscrire</h1>
+            <hr>
+
+            <label><b>Email</b></label>
+            <input type="email" placeholder="Email" name="email" required>
+
+            <br>
+
+            <label><b>Mot de passe</b></label>
+            <input type="password" placeholder="Mot de passe" name="mdp" required>
+
+            <button>Envoyer</button>
+        </div>
+    </form>
+    <br>
+    <div class="container">
+        <h1>Vous n'êtes pas inscrit ?</h1>
+        <hr>
+        <p>Si vous souhaiter vous inscrire veuillez cliquer <span><a href="inscription.html">ici</a></span></p>
+    </div>
+</div>
+
+<footer>
+    <div>
+
+    </div>
+
+</footer>
+</body>
+</html>
