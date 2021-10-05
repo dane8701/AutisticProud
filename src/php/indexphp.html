@@ -7,35 +7,25 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/dropdown.css">
 </head>
 
 <header>
     <div>
         <nav class="navbar bg-dark static-top">
             <div class="container">
-                <a class="navbar-brand"><img src="../img/test.png"></a>
+                <a class="navbar-brand"><img src="../img/test.png" height="100px"></a>
                 <a class="nav-item" href="index.html">Accueil</a>
                 <a class="nav-item">Contact</a>
-                <ul>
-                    <li class="btn btn-secondary dropdown-toggle"><a href="#">Enregistrer &ensp;</a>
-                        <ul class="sous dropdown-menu">
-                            <li><a class="dropdown-item" href="views/ouvrage.php">Ouvrage</a></li>
-                            <li><a class="dropdown-item" href="views/exemplaire.php">Exemplaire</a></li>
-                        </ul>
-                    </li>
-                    <li class="btn btn-secondary dropdown-toggle"><a href="#">Emprunt &ensp;</a>
-                        <ul class="sous dropdown-menu">
-                            <li><a class="dropdown-item" href="views/valider.php">Valider</a></li>
-                            <li><a class="dropdown-item" href="views/modifier.php">Modifier</a></li>
-                        </ul>
-                    </li>
-                    <li class="btn btn-secondary dropdown-toggle"><a href="#">Liste &ensp;</a>
-                        <ul class="sous dropdown-menu">
-                            <li><a class="dropdown-item" href="views/adherent.php">Adhérents</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown button
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </div>
