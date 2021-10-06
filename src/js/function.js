@@ -72,9 +72,26 @@ function checkData() {
 
     var tableBody = document.getElementById("tableBody");
     console.log(tableBody);
+    var ligne;
     var titre, description, heureDebut, heureFin, date, image, tr;
 
     for (var compteurI=0; compteurI < numberLineTotal; compteurI++){
+        ligne = document.getElementById(compteurI);
+        console.log("ligne ="+ligne);
+        image = ligne.children[0].firstElementChild.innerHTML;
+        console.log("image = "+image);
+
+        heureDebut = ligne.children[1].firstElementChild.innerHTML;
+        console.log("HD :"+ heureDebut);
+        /*
+        ligne.children[0].firstElementChild
+        ligne.children[1].firstElementChild.id= "beginHour-" + compteurLineToIncrement;
+        ligne.children[1].lastElementChild.id= "finishHour-" + compteurLineToIncrement;
+        ligne.children[2].firstElementChild.id= "titreTache-" + compteurLineToIncrement;
+        ligne.children[2].lastElementChild.id= "description-" + compteurLineToIncrement;
+
+        console.log("titre ="+titre)
+        ////////////
         tr = tableBody.getElementsByTagName("tr")[compteurI];// ajout [compteurI] afin de selectionner la bonne tr
         console.log("tr =" + tr);
 
@@ -104,7 +121,7 @@ function checkData() {
         console.log("titre = "+titre);
         console.log("description = "+ description);
         var task = new Tache(titre, description, heureDebut, heureFin, date, image);
-        taskTab.push(task);
+        taskTab.push(task);*/
     }
 }
 
