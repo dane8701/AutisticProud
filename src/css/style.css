@@ -1,0 +1,23 @@
+body {
+    font-size: medium;
+    font-family: 'Century Gothic', Courier, monospace;
+}
+
+.footer {
+    min-height: 65px;
+    background: #fff;
+    margin-top: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    line-height: normal;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    color: #214162;
+    padding: 25px 15px;
+}

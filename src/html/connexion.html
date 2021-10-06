@@ -7,57 +7,56 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<header>
-    <div>
-        <nav class="navbar bg-dark static-top">
-            <div class="container">
-                <a class="navbar-brand"><img src="../img/test.png"></a>
-                <div>
-                    <a class="nav-item" href="index.html">Accueil</a>
-                    <a class="nav-item">Contact</a>
-                    <a class="nav-item" href="./inscription.html"><button>S'inscrire</button></a>
-                    <a class="nav-item" href="./connexion.html"><button>Se connecter</button></a>
-                </div>
-            </div>
-
-        </nav>
-    </div>
-</header>
 
 <body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark static-top">
+            <a class="navbar-brand"><img src="../img/test.png" height="100px"></a>
+            <div class="navbar" style="padding: 1%;">
+                <a style="margin-right: 10px;" class="a nav-item nav-link btn btn-outline-primary" href="index.html">Accueil</a>
+                <a style="margin-right: 10px;" class="a nav-item nav-link btn btn-outline-primary" href="#">Contact</a>
+                <a style="margin-right: 10px;" class="a nav-item nav-link btn btn-outline-primary" href="inscription.html">S'inscrire</a>
+                <a style="margin-right: 10px;" class="a nav-item nav-link btn btn-outline-primary" href="connexion.html">Se connecter</a>
+            </div>
+        </nav>
+    </header>
 
-<div class="formDiv">
-    <form action="../php/connexion.php" method="post">
+    <div class="formDiv">
+        <form action="../php/Connexion.php" method="post">
+            <div class="container">
+                <br/>
+                <h1 class="titles">Se connecter</h1>
+                <hr>
+
+                <br/>
+                <label class="control-label"><b>Email</b></label>
+                <input class="input-group input-group-text" type="email" placeholder="Email" name="email" required>
+
+                <br/>
+                <label class="control-label"><b>Mot de passe</b></label>
+                <input class="input-group input-group-text" type="password" placeholder="Mot de passe" name="mdp" required>
+                
+                <br/>
+                <input class="btn btn-primary" type="submit" value="Se connecter"/>
+            </div>
+        </form>
+        <br>
         <div class="container">
-            <h1 class="titles">S'inscrire</h1>
+            <h1>Vous n'êtes pas inscrit ?</h1>
             <hr>
-
-            <label><b>Email</b></label>
-            <input type="email" placeholder="Email" name="email" required>
-
-            <br>
-
-            <label><b>Mot de passe</b></label>
-            <input type="password" placeholder="Mot de passe" name="mdp" required>
-
-            <button>Envoyer</button>
+            <p>Si vous souhaiter vous inscrire veuillez cliquer <span><a href="inscription.html">ici</a></span></p>
         </div>
-    </form>
-    <br>
-    <div class="container">
-        <h1>Vous n'êtes pas inscrit ?</h1>
-        <hr>
-        <p>Si vous souhaiter vous inscrire veuillez cliquer <span><a href="inscription.html">ici</a></span></p>
-    </div>
-</div>
-
-<footer>
-    <div>
-
     </div>
 
-</footer>
+    <footer>
+        <div class="container-fluid">
+            <div class="footer">
+                <p>Copyright © 2021. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

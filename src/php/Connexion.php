@@ -4,10 +4,10 @@
     @$_SESSION["NomPrenom"] = null;
     @$_SESSION["IdUtilisateur"] = null;
 
-    if(isset($_POST["Email"]) && isset($_POST["Password"]))
+    if(isset($_POST["email"]) && isset($_POST["mdp"]))
     {
-        @$Email = $_POST["Email"];
-        @$Password = $_POST["Password"];
+        @$Email = $_POST["email"];
+        @$Password = $_POST["mdp"];
         
         @$req = "SELECT IdUtilisateur, Nom FROM Utilisateur WHERE Email='$Email' AND MotDePasse=md5('$Password')";
         @$res = $conn -> query($req);
@@ -18,13 +18,14 @@
         }
         
         
-        //header("location:../index.php");
+        header("location: indexphp.html");
     }
     else
     {
         session_destroy();
         
-        
+
+
         //header("location:../views/account/Email.php");
     }
 ?>
