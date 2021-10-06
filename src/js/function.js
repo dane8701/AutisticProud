@@ -27,10 +27,16 @@ function addWorkHour(){
     var markerLineAdd = $("#marker");
     var lineToAdd = element.cloneNode(true);
     console.log(lineToAdd);
-    compteurLineToIncrement++;
+    //compteurLineToIncrement++;
     lineToAdd.id = compteurLineToIncrement;
+    lineToAdd.children[0].firstElementChild.id= "img-" + compteurLineToIncrement;
+    lineToAdd.children[1].firstElementChild.id= "beginHour-" + compteurLineToIncrement;
+    lineToAdd.children[1].lastElementChild.id= "finishHour-" + compteurLineToIncrement;
+    lineToAdd.children[2].firstElementChild.id= "titreTache-" + compteurLineToIncrement;
+    lineToAdd.children[2].lastElementChild.id= "description-" + compteurLineToIncrement;
     lineToAdd.lastElementChild.firstElementChild.id = "btn-" + compteurLineToIncrement;
     markerLineAdd.before(lineToAdd);
+    compteurLineToIncrement++;
     numberLineTotal++;
     console.log("ligne ajoutée");
     //checkData();

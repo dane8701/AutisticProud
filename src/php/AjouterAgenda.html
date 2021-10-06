@@ -46,10 +46,10 @@
         <tbody id="tableBody">
             <tr id="0">
                 <th scope="row">
-                    <input type="file" accept=".jpg,.jpeg,.png,.svn">
+                    <input id="img-0" type="file" accept=".jpg,.jpeg,.png,.svn">
                 </th>
                 <td rowspan="2" style="display: flex;">
-                    <select name="beginHour">
+                    <select id="beginHour-0" name="beginHour">
                         <option value="8">8h</option>
                         <option value="9">9h</option>
                         <option value="10">10h</option>
@@ -63,7 +63,7 @@
                         <option value="18">18h</option>
                     </select>
 
-                    <select name="finishHour">
+                    <select id="finishHour-0" name="finishHour">
                         <option value="8">8h</option>
                         <option value="9">9h</option>
                         <option value="10">10h</option>
@@ -78,8 +78,8 @@
                     </select>
                 </td>
                 <td>
-                    <input type="text" placeholder="Titre de la tâche">
-                    <textarea cols="100" placeholder="Veuillez rédiger la tâche de cette heure"></textarea>
+                    <input id="titreTache-0" type="text" placeholder="Titre de la tâche">
+                    <textarea id="description-0" cols="100" placeholder="Veuillez rédiger la tâche de cette heure"></textarea>
                 </td>
                 <td ><a onclick='deleteWorkHour()' id="btn-0" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a></td>
                 <br>
