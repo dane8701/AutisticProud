@@ -1,3 +1,6 @@
+$(document).ready(function () {
+   console.log("ready");
+});
 var compteurLineToIncrement = 1;
 
 class Tache {
@@ -60,11 +63,19 @@ function addWorkHour(){
 
 function deleteWorkHour(){
     console.log("clique");
-    var lineToDelete = this.event.target.id.slice(4,5);
-    //lineToDelete = lineToDelete.slice(4,5);
+    var lineToDelete = this.event.target.id;
     console.log("Id of line to delete =" + lineToDelete);
-    $("#"+lineToDelete).remove();
-    console.log("supprime");
+    lineToDelete = lineToDelete.slice(4,5);
+    if (lineToDelete ==""){
+        alert("Veuillez attendre 10 secondes avant de pouvoir supprimer");
+    }else{
+        $("#"+lineToDelete).remove();
+        $("#"+lineToDelete).nextSibling.remove();
+        console.log("supprime");
+    }
+    //console.log("Id of line to delete =" + lineToDelete);
+    //$(tag.concat(name)).remove();
+    //console.log("supprime");
 
 }
 
