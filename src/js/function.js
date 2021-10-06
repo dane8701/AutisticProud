@@ -87,14 +87,14 @@ function checkData() {
         console.log("image ="+image);
 
         //on récupère les selecteurs
-        heureDebut = tr[compteurI].getElementsByTagName("td").item(0).firstChild.nodeName;
-        heureFin = tr[compteurI].getElementsByTagName("td").item(0).nextSibling.nodeName;
+        heureDebut = tr[compteurI].getElementsByTagName("td")[0].firstChild.nodeName;
+        heureFin = tr[compteurI].getElementsByTagName("td")[0].nextSibling.nodeName;
         console.log("heureDebut = "+heureDebut);
         console.log("heureFin = "+heureFin);
 
         //on récupère le titre de la tâche
-        titre = tr[compteurI].getElementsByTagName("td").item(1).firstChild.nodeName;
-        description = tr[compteurI].getElementsByTagName("td").item(1).nextSibling.nodeName;
+        titre = tr[compteurI].getElementsByTagName("td")[1].firstChild.nodeName;
+        description = tr[compteurI].getElementsByTagName("td")[1].nextSibling.nodeName;
         console.log("titre = "+titre);
         console.log("description = "+ description);
         var task = new Tache(titre, description, heureDebut, heureFin, date, image);
