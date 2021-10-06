@@ -48,7 +48,7 @@
         <tbody>
             <tr id="0">
                 <th scope="row"><input type="file" accept=".jpg,.jpeg,.png,.svn"></th>
-                <td rowspan="2">
+                <td rowspan="2" style="display: flex;">
                     <select name="beginHour">
                         <option value="8">8h</option>
                         <option value="9">9h</option>
@@ -77,11 +77,12 @@
                         <option value="18">18h</option>
                     </select>
                 </td>
-                <td rowspan="2"><input type="text" placeholder="Titre de la tâche"></td>
-                <td rowspan="3"><a onclick='deleteWorkHour()' id="btn-0" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a></td>
-                <tr></tr>
-                <th scope="row"></th>
-                <td colspan="2"><textarea cols="100" placeholder="Veuillez rédiger la tâche de cette heure"></textarea></td>
+                <td>
+                    <input type="text" placeholder="Titre de la tâche">
+                    <textarea cols="100" placeholder="Veuillez rédiger la tâche de cette heure"></textarea>
+                </td>
+                <td ><a onclick='deleteWorkHour()' id="btn-0" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a></td>
+                <br>
             </tr>
 
             <tr id="marker">

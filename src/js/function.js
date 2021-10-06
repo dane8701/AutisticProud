@@ -1,5 +1,9 @@
+var element = null
 $(document).ready(function () {
    console.log("ready");
+
+   element = document.getElementById('0').cloneNode(true);
+   console.log(element)
 });
 var compteurLineToIncrement = 1;
 
@@ -18,59 +22,29 @@ class Tache {
 function addWorkHour(){
     //initialization of the variables for add
     var markerLineAdd = $("#marker");
-    var lineToAdd = "<tr id=\"compteurLine\"><th scope=\"row\"><input type=\"file\" accept=\".jpg,.jpeg,.png,.svn\"></th>\n" +
-        "                <td rowspan=\"2\">\n" +
-        "                    <select name=\"beginHour\">\n" +
-        "                        <option value=\"8\">8h</option>\n" +
-        "                        <option value=\"9\">9h</option>\n" +
-        "                        <option value=\"10\">10h</option>\n" +
-        "                        <option value=\"11\">11h</option>\n" +
-        "                        <option value=\"12\">12h</option>\n" +
-        "                        <option value=\"13\">13h</option>\n" +
-        "                        <option value=\"14\">14h</option>\n" +
-        "                        <option value=\"15\">15h</option>\n" +
-        "                        <option value=\"16\">16h</option>\n" +
-        "                        <option value=\"17\">17h</option>\n" +
-        "                        <option value=\"18\">18h</option>\n" +
-        "                    </select>\n" +
-        "\n" +
-        "                    <select name=\"finishHour\">\n" +
-        "                        <option value=\"8\">8h</option>\n" +
-        "                        <option value=\"9\">9h</option>\n" +
-        "                        <option value=\"10\">10h</option>\n" +
-        "                        <option value=\"11\">11h</option>\n" +
-        "                        <option value=\"12\">12h</option>\n" +
-        "                        <option value=\"13\">13h</option>\n" +
-        "                        <option value=\"14\">14h</option>\n" +
-        "                        <option value=\"15\">15h</option>\n" +
-        "                        <option value=\"16\">16h</option>\n" +
-        "                        <option value=\"17\">17h</option>\n" +
-        "                        <option value=\"18\">18h</option>\n" +
-        "                    </select>\n" +
-        "                </td>\n" +
-        "                <td rowspan=\"2\"><input type=\"text\" placeholder=\"Titre de la tâche\"></td>\n" +
-        "                <td rowspan=\"3\"><a onclick='deleteWorkHour()' id=\"btn-compteurLine\" class=\"btn btn-outline-danger\"><i class=\"bi bi-trash\"></i></a></td>\n" +
-        "                <tr></tr>\n" +
-        "                <th scope=\"row\"></th>\n" +
-        "                <td colspan=\"2\"><textarea cols=\"100\" placeholder=\"Veuillez rédiger la tâche de cette heure\"></textarea></td></tr>";
-
-    markerLineAdd.before(lineToAdd);
-    document.getElementById("compteurLine").id = compteurLineToIncrement;
-    document.getElementById("btn-compteurLine").id = "btn-"+compteurLineToIncrement;
+    var lineToAdd = element.cloneNode(true);
+    console.log(lineToAdd)
     compteurLineToIncrement++;
+    lineToAdd.id = compteurLineToIncrement
+    lineToAdd.lastElementChild.firstElementChild.id = "btn-" + compteurLineToIncrement;
+    markerLineAdd.before(lineToAdd);
     console.log("ligne ajoutée");
 }
 
 function deleteWorkHour(){
     console.log("clique");
+    console.log(this.event.target)
     var lineToDelete = this.event.target.id;
+    if(lineToDelete == ''){
+        lineToDelete = this.event.target.parentElement.id;
+    }
     console.log("Id of line to delete =" + lineToDelete);
     lineToDelete = lineToDelete.slice(4,5);
     if (lineToDelete ==""){
         alert("Veuillez attendre 10 secondes avant de pouvoir supprimer");
     }else{
+        console.log(lineToDelete);
         $("#"+lineToDelete).remove();
-        $("#"+lineToDelete).nextSibling.remove();
         console.log("supprime");
     }
     //console.log("Id of line to delete =" + lineToDelete);
