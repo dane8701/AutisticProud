@@ -38,7 +38,30 @@
             <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="ConsulterAgenda.php">Consulter l'agenda d'un employé</a>
         </div>
         <div style="width: 70%; height: 700px; padding: 10px; border-radius: 10px; margin-top: 5%; background: rgb(238, 238, 238);">
-            Design agenda
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Début - Fin</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody id="tableBody">
+                <tr id="0">
+                    <th scope="row">
+                        <img src="../img/test.png">
+                    </th>
+                    <td rowspan="2" style="display: flex;">
+                        <p id="heure">8h - 9h</p>
+                    </td>
+                    <td>
+                        <p id="titreTache" style="font-weight: bold">Test</p>
+                        <p id="descriptionTache">Ceci est un test afin de voir si tout est ok</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
