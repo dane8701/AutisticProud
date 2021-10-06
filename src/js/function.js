@@ -47,13 +47,26 @@ repeatedPassword.addEventListener("input", function (e) {
         failure.fontcolor("red");
     }
 });
+class Tache {
+    constructor(titre, description, heureDebut, heureFin, date, image) {
+        this.titre = titre;
+        this.description = description;
+        this.heureDebut = heureDebut;
+        this.heureFin = heureFin;
+        this.date = date;
+        this.image = image;
+    }
+}
+//For the calendar all the variables and functions
+var compteurLine = 1;
+var string = "compteurLine";
 
 function addWorkHour(){
     //initialization of the vriables for add
     var markerLineAdd = $("#marker");
-    var lineToAdd = "<tr><th scope=\"row\"><input type=\"file\" accept=\".jpg,.jpeg,.png,.svn\"></th>\n" +
+    var lineToAdd = "<tr id=\"compteurLine\"><th scope=\"row\"><input type=\"file\" accept=\".jpg,.jpeg,.png,.svn\"></th>\n" +
         "                <td rowspan=\"2\">\n" +
-        "                    <select name=\"beginHours\">\n" +
+        "                    <select name=\"beginHour\">\n" +
         "                        <option value=\"8\">8h</option>\n" +
         "                        <option value=\"9\">9h</option>\n" +
         "                        <option value=\"10\">10h</option>\n" +
@@ -66,8 +79,8 @@ function addWorkHour(){
         "                        <option value=\"17\">17h</option>\n" +
         "                        <option value=\"18\">18h</option>\n" +
         "                    </select>\n" +
-        "                    \n" +
-        "                    <select name=\"finishHours\">\n" +
+        "\n" +
+        "                    <select name=\"finishHour\">\n" +
         "                        <option value=\"8\">8h</option>\n" +
         "                        <option value=\"9\">9h</option>\n" +
         "                        <option value=\"10\">10h</option>\n" +
@@ -82,18 +95,21 @@ function addWorkHour(){
         "                    </select>\n" +
         "                </td>\n" +
         "                <td rowspan=\"2\"><input type=\"text\" placeholder=\"Titre de la tâche\"></td>\n" +
+        "                <td rowspan=\"3\"><a id=\"btn-compteurLine\" class=\"btn btn-outline-danger\"><i class=\"bi bi-trash\"></i></a></td>\n" +
         "                <tr></tr>\n" +
         "                <th scope=\"row\"></th>\n" +
-        "                <td colspan=\"2\"><textarea cols=\"120\" placeholder=\"Veuillez rédiger la tâche de cette heure\"></textarea></td>\n</tr>";
+        "                <td colspan=\"2\"><textarea cols=\"100\" placeholder=\"Veuillez rédiger la tâche de cette heure\"></textarea></td></tr>";
 
     markerLineAdd.before(lineToAdd);
+    $("#compteurLine").replace(/compteurLine/, compteurLine);
+    $("#btn-compteurLine").replace(/btn-compteurLine/, compteurLine);
+    compteurLine++;
     console.log("ligne ajoutée");
 }
 
-function deleteWorkHour(){
-    var markerLineDelete = $("#marker");
-    //markerLineDelete.remove();
-
-
+function deleteWorkHour(event){
+    var lineToDelete = event.target.id;
+    lineToDelete.remove();
 }
+
 
