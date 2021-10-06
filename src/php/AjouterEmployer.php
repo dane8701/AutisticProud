@@ -1,3 +1,29 @@
+<?php
+    include("./ConnexionBD.php");
+    @$Nom = $_POST["nom"];
+    @$Prenom = $_POST["prenom"];
+    @$Email = $_POST["email"];
+    @$Password = $_POST["mdp"];
+    @$Type = 2;
+    
+    if(isset($Nom) && isset($Prenom) && isset($Email) && isset($Password))
+    {
+        @$query = "INSERT INTO Utilisateur (Nom, Prenom, Email, MotDePasse, IdType) 
+                    VALUES ('$Nom', '$Prenom', '$Email', '$Password', '$Type')";
+        @$test = $conn -> query($query);
+    }
+    if(@$test)
+    {
+        echo 'Enregistrement OK ! <br/>';
+
+        header("location:../AjouterEmployer.php");
+    }
+    else
+    {
+        echo @$query;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -38,7 +64,26 @@
             <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="ConsulterAgenda.html">Consulter l'agenda d'un employé</a>
         </div>
         <div style="width: 70%; height: 700px; padding: 10px; border-radius: 10px; margin-top: 5%; background: rgb(238, 238, 238);">
-            
+            <form method="POST" action="AjouterEmployer.php">
+                <label class="control-label"><b>Nom</b></label>
+                <input class="input-group input-group-text" style="width: 50%;" type="text" placeholder="Nom" name="nom" required>
+
+                <br/>
+                <label><b>Prénom</b></label>
+                <input class="input-group input-group-text" style="width: 50%;" type="text" placeholder="Prénom" name="prenom" required>
+
+                <br/>
+                <label class="control-label"><b>Email</b></label>
+                <input class="input-group input-group-text" style="width: 50%;" type="email" placeholder="Email" name="email" required>
+
+                <br/>
+                <label class="control-label"><b>Mot de passe</b></label>
+                <input class="input-group input-group-text" style="width: 50%;" id="password" type="password" placeholder="Mot de passe" name="mdp" required>
+
+                <div style="display: flex; padding-right: 45%;">
+                    <input type="submit" class="btn btn-primary text-lg-center" style="margin-top: 15px; height: 80px;" value="Enregistrer"/>
+                </div>
+            </form>
         </div>
     </div>
 
