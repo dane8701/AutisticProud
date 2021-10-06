@@ -3,9 +3,12 @@ $(document).ready(function () {
    console.log("ready");
 
    element = document.getElementById('0').cloneNode(true);
-   console.log(element)
+   console.log(element);
+   document.getElementById('btn-0').parentElement.remove();
 });
 var compteurLineToIncrement = 1;
+var numberLineTotal = 1;
+
 
 class Tache {
     constructor(titre, description, heureDebut, heureFin, date, image) {
@@ -23,11 +26,12 @@ function addWorkHour(){
     //initialization of the variables for add
     var markerLineAdd = $("#marker");
     var lineToAdd = element.cloneNode(true);
-    console.log(lineToAdd)
+    console.log(lineToAdd);
     compteurLineToIncrement++;
-    lineToAdd.id = compteurLineToIncrement
+    lineToAdd.id = compteurLineToIncrement;
     lineToAdd.lastElementChild.firstElementChild.id = "btn-" + compteurLineToIncrement;
     markerLineAdd.before(lineToAdd);
+    numberLineTotal++;
     console.log("ligne ajoutée");
     //checkData();
 }
@@ -46,6 +50,8 @@ function deleteWorkHour(){
     }else{
         console.log(lineToDelete);
         $("#"+lineToDelete).remove();
+        numberLineTotal--;
+        console.log("numberLineTotal ="+numberLineTotal);
         console.log("supprime");
     }
 }
@@ -56,24 +62,44 @@ function showPopup(){
 function checkData() {
     var taskTab = new Array();
     showPopup();
+    //document.getElementById("marker").remove();
 
     var tableBody = document.getElementById("tableBody");
     console.log(tableBody);
+    var titre, description, heureDebut, heureFin, date, image, tr;
 
+    for (var compteurI=0; compteurI < numberLineTotal; compteurI++){
+        tr = tableBody.getElementsByTagName("tr")[compteurI];// ajout [compteurI] afin de selectionner la bonne tr
+        console.log("tr =" + tr);
 
-    console.log(tableBody);
-    for (var compteurI=0; compteurI < compteurLineToIncrement; compteurI++){
-        var titre, description, heureDebut, heureFin, date, image;
-        for (var compteurJ = 0; compteurJ < 3; compteurJ++){
-
-
-
+        //on récupère l'image d'abord
+        if (tr == null){
+            console.log("null");
+        }else{
+            console.log("non nul")
         }
+        image = tr.item();
+        if (image == null){
+            console.log("null");
+        }else {
+            console.log("non null");
+        }
+        console.log("image ="+image);
+
+        //on récupère les selecteurs
+        heureDebut = tr[compteurI].getElementsByTagName("td").item(0).firstChild.nodeName;
+        heureFin = tr[compteurI].getElementsByTagName("td").item(0).nextSibling.nodeName;
+        console.log("heureDebut = "+heureDebut);
+        console.log("heureFin = "+heureFin);
+
+        //on récupère le titre de la tâche
+        titre = tr[compteurI].getElementsByTagName("td").item(1).firstChild.nodeName;
+        description = tr[compteurI].getElementsByTagName("td").item(1).nextSibling.nodeName;
+        console.log("titre = "+titre);
+        console.log("description = "+ description);
         var task = new Tache(titre, description, heureDebut, heureFin, date, image);
         taskTab.push(task);
     }
-
-
 }
 
 
