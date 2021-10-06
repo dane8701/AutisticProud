@@ -40,14 +40,16 @@
         <thead>
             <tr>
                 <th scope="col"></th>
-                <th scope="col">Routine</th>
+                <th scope="col">Début - Fin</th>
                 <th scope="col">Titre</th>
                 <th scope="col"></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tableBody">
             <tr id="0">
-                <th scope="row"><input type="file" accept=".jpg,.jpeg,.png,.svn"></th>
+                <th scope="row">
+                    <input type="file" accept=".jpg,.jpeg,.png,.svn">
+                </th>
                 <td rowspan="2" style="display: flex;">
                     <select name="beginHour">
                         <option value="8">8h</option>
@@ -89,11 +91,16 @@
 
             </tr>
 
-            <tr>
-                <button class="btn btn-primary btn-sm" type="button" id="addLineToTab" onclick="addWorkHour()">Ajouter une ligne</button>
-            </tr>
+
         </tbody>
     </table>
+    <div id="plusButton">
+        <button class="btn btn-primary btn-sm" type="button" id="addLineToTab" onclick="addWorkHour()"><i class="bi bi-plus-lg"></i></button>
+    </div>
+    <div id="submitForCheckAndTransfer">
+        <button type="button" onclick="checkData()">Créer l'agenda</button>
+    </div>
+
     <style>
         #addLineToTab{
             margin-top: 1.5% !important;
@@ -102,6 +109,10 @@
         }
         .agendaBody{
             justify-content: center;
+        }
+        #plusButton{
+            display: block;
+            margin: auto;
         }
     </style>
 </div>

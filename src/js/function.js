@@ -29,6 +29,7 @@ function addWorkHour(){
     lineToAdd.lastElementChild.firstElementChild.id = "btn-" + compteurLineToIncrement;
     markerLineAdd.before(lineToAdd);
     console.log("ligne ajoutée");
+    //checkData();
 }
 
 function deleteWorkHour(){
@@ -47,9 +48,31 @@ function deleteWorkHour(){
         $("#"+lineToDelete).remove();
         console.log("supprime");
     }
-    //console.log("Id of line to delete =" + lineToDelete);
-    //$(tag.concat(name)).remove();
-    //console.log("supprime");
+}
+
+function showPopup(){
+
+}
+function checkData() {
+    var taskTab = new Array();
+    showPopup();
+
+    var tableBody = document.getElementById("tableBody");
+    console.log(tableBody);
+
+
+    console.log(tableBody);
+    for (var compteurI=0; compteurI < compteurLineToIncrement; compteurI++){
+        var titre, description, heureDebut, heureFin, date, image;
+        for (var compteurJ = 0; compteurJ < 3; compteurJ++){
+
+
+
+        }
+        var task = new Tache(titre, description, heureDebut, heureFin, date, image);
+        taskTab.push(task);
+    }
+
 
 }
 
