@@ -78,7 +78,7 @@
                     </select>
                 </td>
                 <td rowspan="2"><input type="text" placeholder="Titre de la tâche"></td>
-                <td rowspan="3"><a class="btn btn-outline-danger"><i class="bi bi-trash"></i></a></td>
+                <td rowspan="3"><a onclick='deleteWorkHour()' id="btn-0" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a></td>
                 <tr></tr>
                 <th scope="row"></th>
                 <td colspan="2"><textarea cols="100" placeholder="Veuillez rédiger la tâche de cette heure"></textarea></td>
@@ -90,18 +90,17 @@
 
             <tr>
                 <button class="btn btn-primary btn-sm" type="button" id="addLineToTab" onclick="addWorkHour()">Ajouter une ligne</button>
-                <button class="btn btn-secondary btn-sm" type="button" id="deleteLineToTab" onclick="deleteWorkHour()">Effacer une ligne</button>
             </tr>
         </tbody>
     </table>
     <style>
-        #addLineToTab, #deleteLineToTab{
+        #addLineToTab{
             margin-top: 1.5% !important;
             display: block;
             margin: auto;
         }
-        .btn-outline-danger{
-            : red;
+        .agendaBody{
+            justify-content: center;
         }
     </style>
 </div>

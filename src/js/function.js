@@ -1,52 +1,5 @@
-//checking password
-var passwordInput =document.getElementById("password");
-var password = null;
+var compteurLineToIncrement = 1;
 
-var repeatedPassword = document.getElementById("repeatedPassword");
-var password2 = null;
-
-var passwordResult = document.getElementById("passwordResult");
-
-var success = "<p>"+"Votre mot de passe est correcte."+"<p>";
-success.fontcolor("green");
-//success.style.fontStyle = "bold";
-
-var failure = "<p>"+"Votre mot de passe ne correspond pas."+"<p>";
-//failure.style.fontStyle = "bold";
-
-passwordInput.addEventListener("input", function (e) {
-    password = e.target.value;
-    console.log("pass = " + password);
-    if (password == password2){
-        console.log("oui");
-        passwordResult.innerHTML = success;
-        success.fontcolor("green");
-    }
-    else if(password && password2 == " "){
-        passwordResult.innerHTML = "<p> </p>";
-    }
-    else{
-        console.log("non");
-        passwordResult.innerHTML = failure;
-        failure.fontcolor("red");
-    }
-});
-
-repeatedPassword.addEventListener("input", function (e) {
-    password2 = e.target.value;
-    console.log("pass2 = " + password2);
-    if (password == password2){
-        console.log("oui");
-        passwordResult.innerHTML = success;
-        success.fontcolor("green");
-    }else if(password && password2 == " "){
-        passwordResult.innerHTML = "<p> </p>";
-    }else{
-        console.log("non");
-        passwordResult.innerHTML = failure;
-        failure.fontcolor("red");
-    }
-});
 class Tache {
     constructor(titre, description, heureDebut, heureFin, date, image) {
         this.titre = titre;
@@ -58,11 +11,9 @@ class Tache {
     }
 }
 //For the calendar all the variables and functions
-var compteurLine = 1;
-var string = "compteurLine";
 
 function addWorkHour(){
-    //initialization of the vriables for add
+    //initialization of the variables for add
     var markerLineAdd = $("#marker");
     var lineToAdd = "<tr id=\"compteurLine\"><th scope=\"row\"><input type=\"file\" accept=\".jpg,.jpeg,.png,.svn\"></th>\n" +
         "                <td rowspan=\"2\">\n" +
@@ -95,21 +46,26 @@ function addWorkHour(){
         "                    </select>\n" +
         "                </td>\n" +
         "                <td rowspan=\"2\"><input type=\"text\" placeholder=\"Titre de la tâche\"></td>\n" +
-        "                <td rowspan=\"3\"><a id=\"btn-compteurLine\" class=\"btn btn-outline-danger\"><i class=\"bi bi-trash\"></i></a></td>\n" +
+        "                <td rowspan=\"3\"><a onclick='deleteWorkHour()' id=\"btn-compteurLine\" class=\"btn btn-outline-danger\"><i class=\"bi bi-trash\"></i></a></td>\n" +
         "                <tr></tr>\n" +
         "                <th scope=\"row\"></th>\n" +
         "                <td colspan=\"2\"><textarea cols=\"100\" placeholder=\"Veuillez rédiger la tâche de cette heure\"></textarea></td></tr>";
 
     markerLineAdd.before(lineToAdd);
-    $("#compteurLine").replace(/compteurLine/, compteurLine);
-    $("#btn-compteurLine").replace(/btn-compteurLine/, compteurLine);
-    compteurLine++;
+    document.getElementById("compteurLine").id = compteurLineToIncrement;
+    document.getElementById("btn-compteurLine").id = "btn-"+compteurLineToIncrement;
+    compteurLineToIncrement++;
     console.log("ligne ajoutée");
 }
 
-function deleteWorkHour(event){
-    var lineToDelete = event.target.id;
-    lineToDelete.remove();
+function deleteWorkHour(){
+    console.log("clique");
+    var lineToDelete = this.event.target.id.slice(4,5);
+    //lineToDelete = lineToDelete.slice(4,5);
+    console.log("Id of line to delete =" + lineToDelete);
+    $("#"+lineToDelete).remove();
+    console.log("supprime");
+
 }
 
 
