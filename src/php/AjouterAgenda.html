@@ -15,7 +15,7 @@
         <nav class="navbar bg-dark static-top">
             <div class="container">
                 <a class="navbar-brand"><img src="../img/test.png" height="100px"></a>
-                <a class="nav-item" href="index.html">Accueil</a>
+                <a class="nav-item" href="indexphp.html">Accueil</a>
                 <a class="nav-item">Contact</a>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,7 +33,7 @@
 
 <body>
 
-<div class="agendaBody">
+<div id="tableDivId" class="agendaBody">
     <input id="tableTitle" type="text">
 
     <table class="table table-striped">
@@ -42,10 +42,11 @@
                 <th scope="col"></th>
                 <th scope="col">Routine</th>
                 <th scope="col">Titre</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr id="0">
                 <th scope="row"><input type="file" accept=".jpg,.jpeg,.png,.svn"></th>
                 <td rowspan="2">
                     <select name="beginHour">
@@ -77,9 +78,10 @@
                     </select>
                 </td>
                 <td rowspan="2"><input type="text" placeholder="Titre de la tâche"></td>
+                <td rowspan="3"><a class="btn btn-outline-danger"><i class="bi bi-trash"></i></a></td>
                 <tr></tr>
                 <th scope="row"></th>
-                <td colspan="2"><textarea cols="120" placeholder="Veuillez rédiger la tâche de cette heure"></textarea></td>
+                <td colspan="2"><textarea cols="100" placeholder="Veuillez rédiger la tâche de cette heure"></textarea></td>
             </tr>
 
             <tr id="marker">
@@ -97,6 +99,9 @@
             margin-top: 1.5% !important;
             display: block;
             margin: auto;
+        }
+        .btn-outline-danger{
+            : red;
         }
     </style>
 </div>
