@@ -48,18 +48,32 @@
             <tr>
                 <th scope="row"><input type="file" accept=".jpg,.jpeg,.png,.svn"></th>
                 <td rowspan="2">
-                    <select name="hours">
-                        <option value="8h">8h</option>
-                        <option value="9h">9h</option>
-                        <option value="10h">10h</option>
-                        <option value="11h">11h</option>
-                        <option value="12h">12h</option>
-                        <option value="13h">13h</option>
-                        <option value="14h">14h</option>
-                        <option value="15h">15h</option>
-                        <option value="16h">16h</option>
-                        <option value="17h">17h</option>
-                        <option value="18h">18h</option>
+                    <select name="beginHours">
+                        <option value="8">8h</option>
+                        <option value="9">9h</option>
+                        <option value="10">10h</option>
+                        <option value="11">11h</option>
+                        <option value="12">12h</option>
+                        <option value="13">13h</option>
+                        <option value="14">14h</option>
+                        <option value="15">15h</option>
+                        <option value="16">16h</option>
+                        <option value="17">17h</option>
+                        <option value="18">18h</option>
+                    </select>
+
+                    <select name="finishHours">
+                        <option value="8">8h</option>
+                        <option value="9">9h</option>
+                        <option value="10">10h</option>
+                        <option value="11">11h</option>
+                        <option value="12">12h</option>
+                        <option value="13">13h</option>
+                        <option value="14">14h</option>
+                        <option value="15">15h</option>
+                        <option value="16">16h</option>
+                        <option value="17">17h</option>
+                        <option value="18">18h</option>
                     </select>
                 </td>
                 <td rowspan="2"><input type="text" placeholder="Titre de la tâche"></td>
@@ -67,40 +81,20 @@
                 <th scope="row"></th>
                 <td colspan="2"><textarea cols="120" placeholder="Veuillez rédiger la tâche de cette heure"></textarea></td>
             </tr>
-            <tr>
-                <th scope="row"><input type="file" accept=".jpg,.jpeg,.png,.svn"></th>
-                <td rowspan="2">
-                    <select name="hours">
-                        <option value="8h">8h</option>
-                        <option value="9h">9h</option>
-                        <option value="10h">10h</option>
-                        <option value="11h">11h</option>
-                        <option value="12h">12h</option>
-                        <option value="13h">13h</option>
-                        <option value="14h">14h</option>
-                        <option value="15h">15h</option>
-                        <option value="16h">16h</option>
-                        <option value="17h">17h</option>
-                        <option value="18h">18h</option>
-                    </select>
-                </td>
-                <td><input type="text" placeholder="Titre de la tâche"></td>
-                <tr></tr>
-                <th scope="row"></th>
-                <td colspan="2"><textarea cols="120" placeholder="Veuillez rédiger la tâche de cette heure"></textarea></td>
-            </tr>
+
             <tr id="marker">
 
             </tr>
 
             <tr>
-                <button class="btn btn-primary btn-lg" type="button" id="addLineToTab" onclick="addWorkHour()">Ajouter une ligne à l'emploi du temps</button>
-                <button class="btn btn-primary btn-lg" type="button" id="deleteLineToTab" onclick="deleteWorkHour()">Effacer une ligne à l'emploi du temps</button>
+                <button class="btn btn-primary btn-sm" type="button" id="addLineToTab" onclick="addWorkHour()">Ajouter une ligne</button>
+                <button class="btn btn-secondary btn-sm" type="button" id="deleteLineToTab" onclick="deleteWorkHour()">Effacer une ligne</button>
             </tr>
         </tbody>
     </table>
     <style>
-        #addLineToTab{
+        #addLineToTab, #deleteLineToTab{
+            margin-top: 1.5% !important;
             display: block;
             margin: auto;
         }

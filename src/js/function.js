@@ -51,23 +51,37 @@ repeatedPassword.addEventListener("input", function (e) {
 function addWorkHour(){
     //initialization of the vriables for add
     var markerLineAdd = $("#marker");
-    var lineToAdd = "<tr> <th scope=\"row\"><input type=\"file\" accept=\".jpg,.jpeg,.png,.svn\"></th>\n" +
+    var lineToAdd = "<tr><th scope=\"row\"><input type=\"file\" accept=\".jpg,.jpeg,.png,.svn\"></th>\n" +
         "                <td rowspan=\"2\">\n" +
-        "                    <select name=\"hours\">\n" +
-        "                        <option value=\"8h\">8h</option>\n" +
-        "                        <option value=\"9h\">9h</option>\n" +
-        "                        <option value=\"10h\">10h</option>\n" +
-        "                        <option value=\"11h\">11h</option>\n" +
-        "                        <option value=\"12h\">12h</option>\n" +
-        "                        <option value=\"13h\">13h</option>\n" +
-        "                        <option value=\"14h\">14h</option>\n" +
-        "                        <option value=\"15h\">15h</option>\n" +
-        "                        <option value=\"16h\">16h</option>\n" +
-        "                        <option value=\"17h\">17h</option>\n" +
-        "                        <option value=\"18h\">18h</option>\n" +
+        "                    <select name=\"beginHours\">\n" +
+        "                        <option value=\"8\">8h</option>\n" +
+        "                        <option value=\"9\">9h</option>\n" +
+        "                        <option value=\"10\">10h</option>\n" +
+        "                        <option value=\"11\">11h</option>\n" +
+        "                        <option value=\"12\">12h</option>\n" +
+        "                        <option value=\"13\">13h</option>\n" +
+        "                        <option value=\"14\">14h</option>\n" +
+        "                        <option value=\"15\">15h</option>\n" +
+        "                        <option value=\"16\">16h</option>\n" +
+        "                        <option value=\"17\">17h</option>\n" +
+        "                        <option value=\"18\">18h</option>\n" +
+        "                    </select>\n" +
+        "                    \n" +
+        "                    <select name=\"finishHours\">\n" +
+        "                        <option value=\"8\">8h</option>\n" +
+        "                        <option value=\"9\">9h</option>\n" +
+        "                        <option value=\"10\">10h</option>\n" +
+        "                        <option value=\"11\">11h</option>\n" +
+        "                        <option value=\"12\">12h</option>\n" +
+        "                        <option value=\"13\">13h</option>\n" +
+        "                        <option value=\"14\">14h</option>\n" +
+        "                        <option value=\"15\">15h</option>\n" +
+        "                        <option value=\"16\">16h</option>\n" +
+        "                        <option value=\"17\">17h</option>\n" +
+        "                        <option value=\"18\">18h</option>\n" +
         "                    </select>\n" +
         "                </td>\n" +
-        "                <td><input type=\"text\" placeholder=\"Titre de la tâche\"></td>\n" +
+        "                <td rowspan=\"2\"><input type=\"text\" placeholder=\"Titre de la tâche\"></td>\n" +
         "                <tr></tr>\n" +
         "                <th scope=\"row\"></th>\n" +
         "                <td colspan=\"2\"><textarea cols=\"120\" placeholder=\"Veuillez rédiger la tâche de cette heure\"></textarea></td>\n</tr>";
