@@ -33,9 +33,9 @@
 
     <div style="display: flex;">
         <div class="bg-transparent" style="width: 20%; height: 100%; padding: 10px; margin-top: 5%;">
-            <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="AjouterEmployer.html">Ajouter un employé</a>
-            <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="ListerEmployer.html">Lister ses employés</a>
-            <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="ConsulterAgenda.html">Consulter l'agenda d'un employé</a>
+            <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="AjouterEmployer.php">Ajouter un employé</a>
+            <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="ListerEmployer.php">Lister ses employés</a>
+            <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="ConsulterAgenda.php">Consulter l'agenda d'un employé</a>
         </div>
         <div style="width: 70%; height: 700px; padding: 10px; border-radius: 10px; margin-top: 5%; background: rgb(238, 238, 238);">
             <table class="table">
@@ -52,21 +52,21 @@
                     <th>
                         <label class="control-label"><b>Mot de passe</b></label>
                     </th>
-                </tr>            
-                <tr>
-                    <td>
-                        aze
-                    </td>
-                    <td>
-                        aze
-                    </td>
-                    <td>
-                        aze
-                    </td>
-                    <td>
-                        aze
-                    </td>
                 </tr>
+                <?php
+                    include("./ConnexionBD.php");
+                    $req = "SELECT Nom, Prenom, Email, MotDePasse FROM Utilisateur WHERE IdType=2";
+                    $res = $conn -> query($req);
+                    while($ligne = $res -> fetch())
+                    {
+                    echo '<tr>
+                            <td>'.$ligne[0].'</td>
+                            <td>'.$ligne[1].'</td>
+                            <td>'.$ligne[2].'</td>
+                            <td>'.$ligne[3].'</td>
+                        </tr>';
+                    }
+                ?>
             </table>
         </div>
     </div>
