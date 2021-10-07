@@ -21,7 +21,7 @@
         <nav class="navbar navbar-dark bg-dark static-top">
                 <a class="navbar-brand"><img src="../img/test.png" height="100px"></a>
                 <div class="navbar" style="padding: 1%;">
-                    <a style="margin-right: 10px;" class="a nav-item nav-link btn btn-outline-primary" href="index.html">Accueil</a>
+                    <a style="margin-right: 10px;" class="a nav-item nav-link btn btn-outline-primary" href="../html/index.html">Accueil</a>
                     <a style="margin-right: 10px;" class="a nav-item nav-link btn btn-outline-primary" href="#">Contact</a>
                     <a class="a nav-item nav-link btn btn-outline-primary" href="Deconnexion.php">Deconnexion <i class="bi bi-box-arrow-right"></i></a>
                 </div>
