@@ -77,8 +77,8 @@
                         </th>
                         <td rowspan="2" style="display: flex;">
                             <select id="beginHour-0" name="beginHour">
-                                <option value="8">8h</option>
-                                <option value="9">9h</option>
+                                <option value="08">8h</option>
+                                <option value="09">9h</option>
                                 <option value="10">10h</option>
                                 <option value="11">11h</option>
                                 <option value="12">12h</option>
@@ -91,8 +91,8 @@
                             </select>
         
                             <select id="finishHour-0" name="finishHour">
-                                <option value="8">8h</option>
-                                <option value="9">9h</option>
+                                <option value="08">8h</option>
+                                <option value="09">9h</option>
                                 <option value="10">10h</option>
                                 <option value="11">11h</option>
                                 <option value="12">12h</option>

@@ -111,7 +111,7 @@ function request(tab){
         dataType: 'json',
         success: function (data) {
             console.log(data)
-            //window.location.replace("../php/AjouterAgendaNext.php");
+            window.location.replace("../php/AjouterAgendaNext.php");
         }
     });
 }
