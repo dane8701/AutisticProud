@@ -76,13 +76,23 @@ function checkData() {
     var titre, description, heureDebut, heureFin, date, image, tr;
 
     for (var compteurI=0; compteurI < numberLineTotal; compteurI++){
+        console.log("Ligne No "+compteurI);
         ligne = document.getElementById(compteurI);
         console.log("ligne ="+ligne);
-        image = ligne.children[0].firstElementChild.innerHTML;
+        image = ligne.children[0].firstElementChild.nodeName;
         console.log("image = "+image);
 
-        heureDebut = ligne.children[1].firstElementChild.innerHTML;
+        heureDebut = ligne.children[1].firstElementChild.nodeName;
         console.log("HD :"+ heureDebut);
+
+        heureFin = ligne.children[1].lastElementChild.nodeName;
+        console.log("HF :"+ heureFin);
+
+        titre = ligne.children[2].firstElementChild.nodeName;
+        console.log("titre :"+ titre);
+
+        description = ligne.children[2].lastElementChild.nodeName;
+        console.log("description :"+ description);
         /*
         ligne.children[0].firstElementChild
         ligne.children[1].firstElementChild.id= "beginHour-" + compteurLineToIncrement;
