@@ -106,14 +106,14 @@ function request(tab){
 
     var request = $.ajax({
         type: "POST",
-        url: "",
+        url: "../php/AjouterAgenda.php",
         data: data,
         success: success,
         dataType: json
     });
 
     request.success(function () {
-        window.location.href = "";
+        window.location.replace("../php/AjouterAgenda.php");
     });
 }
 
@@ -124,13 +124,13 @@ async function checkData() {
     showPopup();
     //document.getElementById("marker").remove();
 
-    var titreAgenda = document.getElementById("tableTitle").value;
+    /*var titreAgenda = document.getElementById("tableTitle").value;
     console.log("titre Agenda : "+titreAgenda);
 
     if (titreAgenda == ""){
         alert("titre agenda vide");
         return;
-    }
+    }*/
 
     var date = document.getElementById("reservationDate").value;
     console.log("date choisi : "+ date);
