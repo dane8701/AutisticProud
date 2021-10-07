@@ -106,7 +106,7 @@ function request(tab){
 
     $.ajax({
         type: 'POST',
-        url: '../php/AjouterAgendaNext.php?tailleTableau=',
+        url: '../php/AjouterAgendaNext.php?tailleTableau='+numberLineTotal,
         data: data,
         dataType: 'json',
         success: function (data) {

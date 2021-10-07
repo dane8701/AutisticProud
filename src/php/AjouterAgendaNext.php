@@ -9,7 +9,9 @@
     $data = json_decode($json);
     echo var_dump($data);
 
-    for ($i = 0; $i < 1; $i++) {
+    $tailleTableau = $_GET['tailleTableau'];
+
+    for ($i = 0; $i < $tailleTableau; $i++) {
 
         $Titre = null;
         $Description = null;

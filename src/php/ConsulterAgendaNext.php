@@ -20,7 +20,7 @@
 <body>
     <header>
         <nav class="navbar navbar-dark bg-dark static-top">
-                <a class="navbar-brand"><img src="../img/test.png" height="100px"></a>
+                <a class="navbar-brand"><img src="../img/logoAP.png" height="100px"></a>
                 <div class="navbar" style="padding: 1%;">
                     <a style="margin-right: 10px;" class="a nav-item nav-link btn btn-outline-primary" href="../html/index.html">Accueil</a>
                     <a style="margin-right: 10px;" class="a nav-item nav-link btn btn-outline-primary" href="#">Contact</a>
