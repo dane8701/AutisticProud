@@ -88,6 +88,11 @@ function checkData() {
         heureFin = ligne.children[1].lastElementChild.nodeName;
         console.log("HF :"+ heureFin);
 
+        if (heureDebut >= heureFin){
+            alert("heure début > heure fin recommencez");
+            return;
+        }
+
         titre = ligne.children[2].firstElementChild.nodeName;
         console.log("titre :"+ titre);
 
