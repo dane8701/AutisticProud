@@ -104,11 +104,11 @@ function request(tab){
     var data = JSON.stringify(tab);
     console.log("data = "+data);
 
-    var request = $.ajax({
-        type: "POST",
-        url: "../php/AjouterAgenda.php",
+    $.ajax({
+        type: 'POST',
+        url: '../php/AjouterAgenda.php',
         data: tab,
-        dataType: json,
+        dataType: 'text',
         success: function () {
             window.location.replace("../php/AjouterAgenda.php");
         }
