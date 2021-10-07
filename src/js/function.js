@@ -107,13 +107,11 @@ function request(tab){
     var request = $.ajax({
         type: "POST",
         url: "../php/AjouterAgenda.php",
-        data: data,
-        success: success,
-        dataType: json
-    });
-
-    request.success(function () {
-        window.location.replace("../php/AjouterAgenda.php");
+        data: tab,
+        dataType: json,
+        success: function () {
+            window.location.replace("../php/AjouterAgenda.php");
+        }
     });
 }
 
