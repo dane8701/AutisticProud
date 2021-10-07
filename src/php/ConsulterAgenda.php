@@ -59,7 +59,7 @@
                 <tr>
                     <?php
                         include("./ConnexionBD.php");
-                        $req = "SELECT IdUtilisateur, Nom, Prenom, Email, MotDePasse FROM Utilisateur WHERE IdType=2";
+                        $req = "SELECT IdAutiste, Nom, Prenom, Email, MotDePasse FROM Autiste";
                         $res = $conn -> query($req);
                         while($ligne = $res -> fetch())
                         {
@@ -69,7 +69,7 @@
                                 <td>'.$ligne[3].'</td>
                                 <td>'.$ligne[4].'</td>
                                 <td>
-                                    <a href="ConsulterAgendaNext.html?IdUtilisateur='.$ligne[0].'"><i class="bi bi-eye-fill"></i></a>
+                                    <a href="ConsulterAgendaNext.php?IdAutiste='.$ligne[0].'"><i class="bi bi-eye-fill"></i></a>
                                 </td>
                             </tr>';
                         }
