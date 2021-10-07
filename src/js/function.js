@@ -9,7 +9,6 @@ $(document).ready(function () {
 var compteurLineToIncrement = 1;
 var numberLineTotal = 1;
 
-
 class Tache {
     constructor(titre, description, heureDebut, heureFin, date, image) {
         this.titre = titre;
@@ -21,6 +20,13 @@ class Tache {
     }
 }
 //For the calendar all the variables and functions
+$(function () {
+    // ACTIVATION DU DATEPICKER
+    $('.datepicker').datepicker({
+        clearBtn: true,
+        format: "dd/mm/yyyy"
+    });
+});
 
 function addWorkHour(){
     //initialization of the variables for add
@@ -65,79 +71,89 @@ function deleteWorkHour(){
 function showPopup(){
 
 }
+
+function request(tab){
+    console.log("Tableau :"+tab);
+}
+
 function checkData() {
     var taskTab = new Array();
     showPopup();
     //document.getElementById("marker").remove();
 
+    var titreAgenda = document.getElementById("tableTitle").value;
+    console.log("titre Agenda : "+titreAgenda);
+
+    if (titreAgenda == ""){
+        alert("titre agenda vide");
+        return;
+    }
+
+    var date = document.getElementById("reservationDate").value;
+    console.log("date choisi : "+ date);
+
+    if (date == ""){
+        alert("date vide");
+        return;
+    }
+
     var tableBody = document.getElementById("tableBody");
     console.log(tableBody);
     var ligne;
-    var titre, description, heureDebut, heureFin, date, image, tr;
+    var titre, description, heureDebut, heureFin, image;
 
     for (var compteurI=0; compteurI < numberLineTotal; compteurI++){
         console.log("Ligne No "+compteurI);
+
         ligne = document.getElementById(compteurI);
         console.log("ligne ="+ligne);
-        image = ligne.children[0].firstElementChild.nodeName;
+
+        image = ligne.children[0].firstElementChild.value;
         console.log("image = "+image);
 
-        heureDebut = ligne.children[1].firstElementChild.nodeName;
+        if (image== ""){
+            alert("imge non selectionné");
+            return;
+        }
+
+        heureDebut = ligne.children[1].firstElementChild.value;
         console.log("HD :"+ heureDebut);
 
-        heureFin = ligne.children[1].lastElementChild.nodeName;
+        heureFin = ligne.children[1].lastElementChild.value;
         console.log("HF :"+ heureFin);
 
-        if (heureDebut >= heureFin){
+        if (parseInt(heureDebut, 10) >= parseInt(heureFin,10)){
             alert("heure début > heure fin recommencez");
             return;
         }
 
-        titre = ligne.children[2].firstElementChild.nodeName;
-        console.log("titre :"+ titre);
+        titre = ligne.children[2].firstElementChild.value;
+        console.log("titre :" +titre);
 
-        description = ligne.children[2].lastElementChild.nodeName;
+        if (titre == ""){
+            alert("Titre vide");
+            return;
+        }
+
+        description = ligne.children[2].lastElementChild.value;
         console.log("description :"+ description);
-        /*
-        ligne.children[0].firstElementChild
-        ligne.children[1].firstElementChild.id= "beginHour-" + compteurLineToIncrement;
-        ligne.children[1].lastElementChild.id= "finishHour-" + compteurLineToIncrement;
-        ligne.children[2].firstElementChild.id= "titreTache-" + compteurLineToIncrement;
-        ligne.children[2].lastElementChild.id= "description-" + compteurLineToIncrement;
 
-        console.log("titre ="+titre)
-        ////////////
-        tr = tableBody.getElementsByTagName("tr")[compteurI];// ajout [compteurI] afin de selectionner la bonne tr
-        console.log("tr =" + tr);
-
-        //on récupère l'image d'abord
-        if (tr == null){
-            console.log("null");
-        }else{
-            console.log("non nul")
+        if (description = ""){
+            alert("Description vide");
+            return;
         }
-        image = tr.item();
-        if (image == null){
-            console.log("null");
-        }else {
-            console.log("non null");
-        }
-        console.log("image ="+image);
 
-        //on récupère les selecteurs
-        heureDebut = tr[compteurI].getElementsByTagName("td")[0].firstChild.nodeName;
-        heureFin = tr[compteurI].getElementsByTagName("td")[0].nextSibling.nodeName;
-        console.log("heureDebut = "+heureDebut);
-        console.log("heureFin = "+heureFin);
-
-        //on récupère le titre de la tâche
-        titre = tr[compteurI].getElementsByTagName("td")[1].firstChild.nodeName;
-        description = tr[compteurI].getElementsByTagName("td")[1].nextSibling.nodeName;
-        console.log("titre = "+titre);
-        console.log("description = "+ description);
         var task = new Tache(titre, description, heureDebut, heureFin, date, image);
-        taskTab.push(task);*/
+        taskTab.push(task);
+        console.log("Task No "+compteurI);
+        console.log("task titre "+ task.titre);
+        console.log("task description "+task.description);
+        console.log("task heure début "+task.heureDebut);
+        console.log("task heure fin "+task.heureFin);
+        console.log("task date "+task.date);
+        console.log("---------------------");
     }
+    request(taskTab);
 }
 
 
