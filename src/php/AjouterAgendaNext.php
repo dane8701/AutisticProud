@@ -31,7 +31,7 @@
         $test = null;
 
         @$query = 'INSERT INTO `tache`(`Titre`, `Description`, `HeureDebut`, `HeureFin`, `DateTache`, `Image`, `IdAutiste`, `IdEmployeur`) 
-                        VALUES (\''.$Titre.'\', \''.$Description.'\', '.$HeureDebut.', '.$HeureFin.', \''.$DateTache.'\', \''.$Image.'\', '.$IdAutiste.', '.$IdEmployeur.')';
+                        VALUES (\''.$Titre.'\', \''.$Description.'\', \''.$HeureDebut.':00:00\', \''.$HeureFin.':00:00\', \''.$DateTache.'\', \''.$Image.'\', '.$IdAutiste.', '.$IdEmployeur.')';
         @$test = $conn -> query($query);
 
         if(@$test)
