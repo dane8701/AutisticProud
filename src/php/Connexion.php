@@ -25,8 +25,7 @@
         }
         else
         {
-            echo $IdType;
-            //header("location: IndexAutiste.php");
+            header("location: IndexAutiste.php");
         }
         
     }
