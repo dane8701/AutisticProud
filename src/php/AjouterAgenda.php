@@ -54,6 +54,7 @@
         <div id="tableDivId" class="agendaBody ">
             <br>
             <div style="width: 30%;" class="form-group">
+                <label class="control control-label">Selectionner la date</label>
                 <div class="datepicker date input-group">
                     <input style="width: 30%" type="date" placeholder="Date" class="form-control" id="reservationDate">
                     <div class="input-group-append"><span class="input-group-text px-4"><i class="bi bi-calendar3"></i></span></div>
@@ -76,7 +77,7 @@
                             <input id="img-0" type="file" accept=".jpg,.jpeg,.png,.svn">
                         </th>
                         <td rowspan="2" style="display: flex;">
-                            <select id="beginHour-0" name="beginHour">
+                            <select class="input form-control" style="margin-rigth : 5px;" id="beginHour-0" name="beginHour">
                                 <option value="08">8h</option>
                                 <option value="09">9h</option>
                                 <option value="10">10h</option>
@@ -90,7 +91,7 @@
                                 <option value="18">18h</option>
                             </select>
         
-                            <select id="finishHour-0" name="finishHour">
+                            <select class="input form-control" id="finishHour-0" name="finishHour">
                                 <option value="08">8h</option>
                                 <option value="09">9h</option>
                                 <option value="10">10h</option>
@@ -105,8 +106,8 @@
                             </select>
                         </td>
                         <td>
-                            <input id="titreTache-0" type="text" placeholder="Titre de la tâche">
-                            <textarea id="description-0" cols="100" placeholder="Veuillez rédiger la tâche de cette heure"></textarea>
+                            <input class="input form-control" id="titreTache-0" type="text" placeholder="Titre de la tâche">
+                            <textarea class="input form-control" id="description-0" cols="100" placeholder="Veuillez rédiger la tâche de cette heure"></textarea>
                         </td>
                         <td ><a onclick='deleteWorkHour()' id="btn-0" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a></td>
                         <br>
