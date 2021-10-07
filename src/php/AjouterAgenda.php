@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <title>Autistic & Proud</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -46,7 +46,7 @@
 <div style="display: flex;">
     <div class="bg-transparent" style="width: 20%; height: 100%; padding: 10px; margin-top: 5%;">
         <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="AjouterEmployer.php">Ajouter un employé</a>
-        <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="../html/AjouterAg.php">Ajouter agenda employé</a>
+        <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="AjouterAg.php">Ajouter agenda employé</a>
         <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="ListerEmployer.php">Lister ses employés</a>
         <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="ConsulterAgenda.php">Consulter l'agenda d'un employé</a>
     </div>
@@ -55,7 +55,7 @@
             <br>
             <div style="width: 30%;" class="form-group">
                 <div class="datepicker date input-group">
-                    <input style="width: 30%" type="text" placeholder="Date" class="form-control" id="reservationDate">
+                    <input style="width: 30%" type="date" placeholder="Date" class="form-control" id="reservationDate">
                     <div class="input-group-append"><span class="input-group-text px-4"><i class="bi bi-calendar3"></i></span></div>
                 </div>
             </div>
