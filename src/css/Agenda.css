@@ -1,0 +1,10 @@
+#headtable {
+    width: 70%; 
+    height: 700px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    margin-top: 5%; 
+    background: rgb(238, 238, 238); 
+    color: white; 
+    display: flex;
+}
