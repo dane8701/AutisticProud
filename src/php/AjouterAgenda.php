@@ -1,4 +1,10 @@
 <?php
+    session_start();
+    if(isset($_GET["IdAutiste"]))
+    {
+        @$_SESSION["IdAutiste"] = $_GET["IdAutiste"];
+    }
+    $IdAutiste = $_SESSION["IdAutiste"];
     echo var_dump($_POST);
     echo $_POST["tab"];
 
