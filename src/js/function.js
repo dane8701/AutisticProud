@@ -17,6 +17,7 @@ class Tache {
         this.heureFin = heureFin;
         this.date = date;
         this.image = image;
+
     }
 }
 //For the calendar all the variables and functions
@@ -24,7 +25,7 @@ $(function () {
     // ACTIVATION DU DATEPICKER
     $('.datepicker').datepicker({
         clearBtn: true,
-        format: "dd/mm/yyyy"
+        format: "yyyy-mm-dd"
     });
 });
 
@@ -72,12 +73,54 @@ function showPopup(){
 
 }
 
-function request(tab){
-    console.log("Tableau :"+tab);
+async function readFileAsDataURL(file) {
+    let result_base64 = await new Promise((resolve) => {
+        let fileReader = new FileReader();
+        fileReader.onload = (e) => resolve(fileReader.result);
+        fileReader.readAsDataURL(file);
+    });
+
+    console.log(result_base64); // aGV5IHRoZXJl...
+
+    return result_base64;
 }
 
-function checkData() {
+function convertDataURIToBinary(dataURI) {
+    var BASE64_MARKER = ';base64,';
+    var base64Index = dataURI.indexOf(BASE64_MARKER) + BASE64_MARKER.length;
+    var base64 = dataURI.substring(base64Index);
+    var raw = window.atob(base64);
+    var rawLength = raw.length;
+    var array = new Uint8Array(new ArrayBuffer(rawLength));
+
+    for(i = 0; i < rawLength; i++) {
+        array[i] = raw.charCodeAt(i);
+    }
+    return array;
+}
+
+function request(tab){
+    console.log("Tableau :"+tab);
+    var data = JSON.stringify(tab);
+    console.log("data = "+data);
+
+    var request = $.ajax({
+        type: "POST",
+        url: "",
+        data: data,
+        success: success,
+        dataType: json
+    });
+
+    request.success(function () {
+        window.location.href = "";
+    });
+}
+
+async function checkData() {
     var taskTab = new Array();
+    var fileReader= new FileReader();
+
     showPopup();
     //document.getElementById("marker").remove();
 
@@ -108,14 +151,6 @@ function checkData() {
         ligne = document.getElementById(compteurI);
         console.log("ligne ="+ligne);
 
-        image = ligne.children[0].firstElementChild.value;
-        console.log("image = "+image);
-
-        if (image== ""){
-            alert("imge non selectionné");
-            return;
-        }
-
         heureDebut = ligne.children[1].firstElementChild.value;
         console.log("HD :"+ heureDebut);
 
@@ -138,8 +173,17 @@ function checkData() {
         description = ligne.children[2].lastElementChild.value;
         console.log("description :"+ description);
 
-        if (description = ""){
+        if (description == ""){
             alert("Description vide");
+            return;
+        }
+
+        image = ligne.children[0].firstElementChild.files[0];
+        image = await readFileAsDataURL(image);
+
+
+        if (image== ""){
+            alert("imge non selectionné");
             return;
         }
 
