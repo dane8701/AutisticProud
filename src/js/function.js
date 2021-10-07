@@ -106,11 +106,11 @@ function request(tab){
 
     $.ajax({
         type: 'POST',
-        url: '../php/AjouterAgenda.php',
+        url: '../php/AjouterAgendaNext.php',
         data: tab,
         dataType: 'text',
         success: function () {
-            window.location.replace("../php/AjouterAgenda.php");
+            window.location.replace("../php/AjouterAgendaNext.php");
         }
     });
 }
