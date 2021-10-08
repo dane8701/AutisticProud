@@ -46,12 +46,12 @@
         </div>
         <div class="headtable" style="width: 70%; height: max-content; padding: 10px; border-radius: 10px; margin-top: 5%; background: rgb(238, 238, 238); color: white; display: flex;">
             <div style="width: 100%;">
-                <div style="background-color: rgba(0, 0, 255, 0.349); text-align: center; margin-right: 5px; border-radius: 5px;">LUNDI <br/> 17/08/2021</div>
+                <div style="background-color: rgba(0, 0, 255, 0.349); text-align: center; margin-right: 5px; border-radius: 5px;">LUNDI</div>
 
                 <?php
                     //LUNDI
                     include("./ConnexionBD.php");
-                    $req = 'SELECT Titre, Description, DATE_FORMAT(HeureDebut, \'%H\'), DATE_FORMAT(HeureFin, \'%H\'), DATE_FORMAT(DateTache, \'%a\'), Image FROM Tache WHERE IdEmployeur='.$IdEmployeur.' AND IdAutiste='.$IdAutiste.' AND DATE_FORMAT(DateTache, \'%a\')="Mon" AND DateTache > NOW() AND DATE_FORMAT(DateTache, \'%DD\') < DATE_FORMAT(NOW(), \'%DD\') + 7';
+                    $req = 'SELECT Titre, Description, DATE_FORMAT(HeureDebut, \'%H\'), DATE_FORMAT(HeureFin, \'%H\'), DateTache, Image FROM Tache WHERE IdEmployeur='.$IdEmployeur.' AND IdAutiste='.$IdAutiste.' AND DATE_FORMAT(DateTache, \'%a\')="Mon" AND DateTache > NOW() AND DATE_FORMAT(DateTache, \'%DD\') < DATE_FORMAT(NOW(), \'%DD\') + 7';
                     $res = $conn -> query($req);
                     while($ligne = $res -> fetch())
                     {
@@ -63,6 +63,7 @@
                         $Image = $ligne[5];
                         echo '<div style="color: black; background-color: white; text-align: center; margin-top: 5px; margin-right: 5px; border-radius: 5px;">
                             <b style="font-size: large;">'.$HeureDebut.'h - '.$HeureFin.'h</b> <br/>
+                            <u>'.$DateTache.'</u><br/>
                             '.$Titre.' <br/>
                             <img src="'.$Image.'" style="width: 80%;">
                             <p>'.$Description.'</p>
@@ -72,12 +73,12 @@
             </div>
             
             <div style="width: 100%;">
-                <div style="background-color: rgba(0, 0, 255, 0.486); text-align: center; margin-right: 5px; border-radius: 5px;">MARDI <br/> 17/08/2021</div>
+                <div style="background-color: rgba(0, 0, 255, 0.486); text-align: center; margin-right: 5px; border-radius: 5px;">MARDI</div>
                 
                 <?php
                     //MARDI
                     include("./ConnexionBD.php");
-                    $req = 'SELECT Titre, Description, DATE_FORMAT(HeureDebut, \'%H\'), DATE_FORMAT(HeureFin, \'%H\'), DATE_FORMAT(DateTache, \'%a\'), Image FROM Tache WHERE IdEmployeur='.$IdEmployeur.' AND IdAutiste='.$IdAutiste.' AND DATE_FORMAT(DateTache, \'%a\')="Tue" AND DateTache > NOW() AND DATE_FORMAT(DateTache, \'%DD\') < DATE_FORMAT(NOW(), \'%DD\') + 7';
+                    $req = 'SELECT Titre, Description, DATE_FORMAT(HeureDebut, \'%H\'), DATE_FORMAT(HeureFin, \'%H\'), DateTache, Image FROM Tache WHERE IdEmployeur='.$IdEmployeur.' AND IdAutiste='.$IdAutiste.' AND DATE_FORMAT(DateTache, \'%a\')="Tue" AND DateTache > NOW() AND DATE_FORMAT(DateTache, \'%DD\') < DATE_FORMAT(NOW(), \'%DD\') + 7';
                     $res = $conn -> query($req);
                     while($ligne = $res -> fetch())
                     {
@@ -89,6 +90,7 @@
                         $Image = $ligne[5];
                         echo '<div style="color: black; background-color: white; text-align: center; margin-top: 5px; margin-right: 5px; border-radius: 5px;">
                             <b style="font-size: large;">'.$HeureDebut.'h - '.$HeureFin.'h</b> <br/>
+                            <u>'.$DateTache.'</u><br/>
                             '.$Titre.' <br/>
                             <img src="'.$Image.'" style="width: 80%;">
                             <p>'.$Description.'</p>
@@ -98,12 +100,12 @@
             </div>
 
             <div style="width: 100%;">
-                <div style="background-color: rgba(0, 0, 255, 0.644); text-align: center; margin-right: 5px; border-radius: 5px;">MERCREDI <br/> 17/08/2021</div>
+                <div style="background-color: rgba(0, 0, 255, 0.644); text-align: center; margin-right: 5px; border-radius: 5px;">MERCREDI</div>
 
                 <?php
                     //MERCREDI
                     include("./ConnexionBD.php");
-                    $req = 'SELECT Titre, Description, DATE_FORMAT(HeureDebut, \'%H\'), DATE_FORMAT(HeureFin, \'%H\'), DATE_FORMAT(DateTache, \'%a\'), Image FROM Tache WHERE IdEmployeur='.$IdEmployeur.' AND IdAutiste='.$IdAutiste.' AND DATE_FORMAT(DateTache, \'%a\')="Wed" AND DateTache > NOW() AND DATE_FORMAT(DateTache, \'%DD\') < DATE_FORMAT(NOW(), \'%DD\') + 7';
+                    $req = 'SELECT Titre, Description, DATE_FORMAT(HeureDebut, \'%H\'), DATE_FORMAT(HeureFin, \'%H\'), DateTache, Image FROM Tache WHERE IdEmployeur='.$IdEmployeur.' AND IdAutiste='.$IdAutiste.' AND DATE_FORMAT(DateTache, \'%a\')="Wed" AND DateTache > NOW() AND DATE_FORMAT(DateTache, \'%DD\') < DATE_FORMAT(NOW(), \'%DD\') + 7';
                     $res = $conn -> query($req);
                     while($ligne = $res -> fetch())
                     {
@@ -115,6 +117,7 @@
                         $Image = $ligne[5];
                         echo '<div style="color: black; background-color: white; text-align: center; margin-top: 5px; margin-right: 5px; border-radius: 5px;">
                             <b style="font-size: large;">'.$HeureDebut.'h - '.$HeureFin.'h</b> <br/>
+                            <u>'.$DateTache.'</u><br/>
                             '.$Titre.' <br/>
                             <img src="'.$Image.'" style="width: 80%;">
                             <p>'.$Description.'</p>
@@ -124,12 +127,12 @@
             </div>
 
             <div style="width: 100%;">
-                <div style="background-color: rgba(45, 45, 194, 0.822); text-align: center; margin-right: 5px; border-radius: 5px;">JEUDI <br/> 17/08/2021</div>
+                <div style="background-color: rgba(45, 45, 194, 0.822); text-align: center; margin-right: 5px; border-radius: 5px;">JEUDI</div>
 
                 <?php
                     //JEUDI
                     include("./ConnexionBD.php");
-                    $req = 'SELECT Titre, Description, DATE_FORMAT(HeureDebut, \'%H\'), DATE_FORMAT(HeureFin, \'%H\'), DATE_FORMAT(DateTache, \'%a\'), Image FROM Tache WHERE IdEmployeur='.$IdEmployeur.' AND IdAutiste='.$IdAutiste.' AND DATE_FORMAT(DateTache, \'%a\')="Thu" AND DateTache > NOW() AND DATE_FORMAT(DateTache, \'%DD\') < DATE_FORMAT(NOW(), \'%DD\') + 7';
+                    $req = 'SELECT Titre, Description, DATE_FORMAT(HeureDebut, \'%H\'), DATE_FORMAT(HeureFin, \'%H\'), DateTache, Image FROM Tache WHERE IdEmployeur='.$IdEmployeur.' AND IdAutiste='.$IdAutiste.' AND DATE_FORMAT(DateTache, \'%a\')="Thu" AND DateTache > NOW() AND DATE_FORMAT(DateTache, \'%DD\') < DATE_FORMAT(NOW(), \'%DD\') + 7';
                     $res = $conn -> query($req);
                     while($ligne = $res -> fetch())
                     {
@@ -149,12 +152,12 @@
                 ?>
             </div>
             <div style="width: 100%;">
-                <div style="background-color: rgba(55, 55, 179, 0.904); text-align: center; border-radius: 5px;">VENDREDI <br/> 17/08/2021</div>
+                <div style="background-color: rgba(55, 55, 179, 0.904); text-align: center; border-radius: 5px;">VENDREDI</div>
 
                 <?php
                     //VENDREDI
                     include("./ConnexionBD.php");
-                    $req = 'SELECT Titre, Description, DATE_FORMAT(HeureDebut, \'%H\'), DATE_FORMAT(HeureFin, \'%H\'), DATE_FORMAT(DateTache, \'%a\'), Image FROM Tache WHERE IdEmployeur='.$IdEmployeur.' AND IdAutiste='.$IdAutiste.' AND DATE_FORMAT(DateTache, \'%a\')="Fri" AND DateTache > NOW() AND DATE_FORMAT(DateTache, \'%DD\') < DATE_FORMAT(NOW(), \'%DD\') + 7';
+                    $req = 'SELECT Titre, Description, DATE_FORMAT(HeureDebut, \'%H\'), DATE_FORMAT(HeureFin, \'%H\'), DateTache, Image FROM Tache WHERE IdEmployeur='.$IdEmployeur.' AND IdAutiste='.$IdAutiste.' AND DATE_FORMAT(DateTache, \'%a\')="Fri" AND DateTache > NOW() AND DATE_FORMAT(DateTache, \'%DD\') < DATE_FORMAT(NOW(), \'%DD\') + 7';
                     $res = $conn -> query($req);
                     while($ligne = $res -> fetch())
                     {
@@ -166,6 +169,7 @@
                         $Image = $ligne[5];
                         echo '<div style="color: black; background-color: white; text-align: center; margin-top: 5px; margin-right: 5px; border-radius: 5px;">
                             <b style="font-size: large;">'.$HeureDebut.'h - '.$HeureFin.'h</b> <br/>
+                            <u>'.$DateTache.'</u><br/>
                             '.$Titre.' <br/>
                             <img src="'.$Image.'" style="width: 80%;">
                             <p>'.$Description.'</p>
