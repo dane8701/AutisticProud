@@ -100,9 +100,9 @@ function convertDataURIToBinary(dataURI) {
 }
 
 function request(tab){
-    console.log("Tableau :"+tab);
+    //console.log("Tableau :"+tab);
     var data = JSON.stringify(tab);
-    console.log("data = "+data);
+    //console.log("data = "+data);
 
     $.ajax({
         type: 'POST',
@@ -110,8 +110,12 @@ function request(tab){
         data: data,
         dataType: 'json',
         success: function (data) {
-            console.log(data)
-            window.location.replace("../php/AjouterAgendaNext.php");
+            console.log("ok success");
+            $(location).href="../php/AjouterAgenda.php";
+        },
+        error : function (data) {
+            console.log("ok error");
+            window.location.replace("../php/AjouterAgenda.php");
         }
     });
 }

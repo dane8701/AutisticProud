@@ -27,6 +27,7 @@
                 </div>
         </nav>
     </header>
+    <center><h1 style="margin-top : 5px;">Bonjour <b><?php echo $_SESSION["NomPrenom"];?></b></h1></center>
     <div class="headtable" style="width: 70%; height: max-content; padding: 10px; border-radius: 10px; margin : auto; margin-top: 5%; background: rgb(238, 238, 238); color: white; display: flex;">
             <div style="width: 100%;">
                 <div style="background-color: rgba(0, 0, 255, 0.349); text-align: center; margin-right: 5px; border-radius: 5px;">LUNDI <br/> 17/08/2021</div>
@@ -46,7 +47,7 @@
                         $Image = $ligne[5];
                         echo '<div style="color: black; background-color: white; text-align: center; margin-top: 5px; margin-right: 5px; border-radius: 5px;">
                             <b style="font-size: large;">'.$HeureDebut.'h - '.$HeureFin.'h</b> <br/>
-                            '.$Titre.' <br/>
+                            <h3>'.$Titre.'</h3> <br/>
                             <img src="'.$Image.'" style="width: 80%;">
                             <p>'.$Description.'</p>
                         </div>';
@@ -72,7 +73,7 @@
                         $Image = $ligne[5];
                         echo '<div style="color: black; background-color: white; text-align: center; margin-top: 5px; margin-right: 5px; border-radius: 5px;">
                             <b style="font-size: large;">'.$HeureDebut.'h - '.$HeureFin.'h</b> <br/>
-                            '.$Titre.' <br/>
+                            <h3>'.$Titre.'</h3> <br/>
                             <img src="'.$Image.'" style="width: 80%;">
                             <p>'.$Description.'</p>
                         </div>';
@@ -98,7 +99,7 @@
                         $Image = $ligne[5];
                         echo '<div style="color: black; background-color: white; text-align: center; margin-top: 5px; margin-right: 5px; border-radius: 5px;">
                             <b style="font-size: large;">'.$HeureDebut.'h - '.$HeureFin.'h</b> <br/>
-                            '.$Titre.' <br/>
+                            <h3>'.$Titre.'</h3> <br/>
                             <img src="'.$Image.'" style="width: 80%;">
                             <p>'.$Description.'</p>
                         </div>';
@@ -124,7 +125,7 @@
                         $Image = $ligne[5];
                         echo '<div style="color: black; background-color: white; text-align: center; margin-top: 5px; margin-right: 5px; border-radius: 5px;">
                             <b style="font-size: large;">'.$HeureDebut.'h - '.$HeureFin.'h</b> <br/>
-                            '.$Titre.' <br/>
+                            <h3>'.$Titre.'</h3> <br/>
                             <img src="'.$Image.'" style="width: 80%;">
                             <p>'.$Description.'</p>
                         </div>';
@@ -149,7 +150,7 @@
                         $Image = $ligne[5];
                         echo '<div style="color: black; background-color: white; text-align: center; margin-top: 5px; margin-right: 5px; border-radius: 5px;">
                             <b style="font-size: large;">'.$HeureDebut.'h - '.$HeureFin.'h</b> <br/>
-                            '.$Titre.' <br/>
+                            <h3>'.$Titre.'</h3> <br/>
                             <img src="'.$Image.'" style="width: 80%;">
                             <p>'.$Description.'</p>
                         </div>';

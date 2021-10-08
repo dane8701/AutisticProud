@@ -43,7 +43,7 @@
             <a class="btn btn-outline-secondary" style="padding: 5px; border-radius: 10px; margin-bottom: 5px; width: 100%; height: max-content;" href="ConsulterAgenda.php">Consulter l'agenda d'un employé</a>
         </div>
         <div style="width: 70%; height: 700px; padding: 10px; border-radius: 10px; margin-top: 5%; background: rgb(238, 238, 238);">
-            
+            <center><h1 style="margin-top : 5px;">Bonjour <b><?php echo $_SESSION["NomPrenom"];?></b></h1></center>
         </div>
     </div>
 

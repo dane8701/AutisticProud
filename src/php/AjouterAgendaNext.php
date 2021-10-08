@@ -9,7 +9,7 @@
     $data = json_decode($json);
     echo var_dump($data);
 
-    $tailleTableau = $_GET['tailleTableau'];
+    @$tailleTableau = $_GET['tailleTableau'];
 
     for ($i = 0; $i < $tailleTableau; $i++) {
 
